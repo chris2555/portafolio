@@ -2,7 +2,7 @@
 
 
 
-**Live Preview:** [https://clever-baklava-c41ed6.netlify.app/](https://chris2555.github.io/portafolio/)
+**Live Preview:** [https://chris2555.github.io/portafolio/](https://chris2555.github.io/portafolio/)
 
 ## Descripción del Proyecto
 
