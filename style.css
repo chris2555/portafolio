@@ -1,0 +1,268 @@
+:root {
+            --primary-color: #2A2A2A;
+            --accent-color: #00C9A7;
+            --dark-bg: #1A1A1A;
+            --light-text: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-bg);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            min-height: 90vh;
+            padding: 4rem 8%;
+            background: linear-gradient(45deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #00C9A7, #92FE9D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            justify-self: center;
+            box-shadow: 0 0 40px rgba(0,201,167,0.3);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--accent-color), #92FE9D);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 6rem 8%;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            padding: 2rem;
+            text-align: left;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 4rem 5%;
+            }
+
+            .hero img {
+                width: 250px;
+                height: 250px;
+                margin-top: 2rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+
+
+        .skill-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover .skill-icon {
+        transform: rotate(15deg) scale(1.1);
+    }
+
+
+    .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+    
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00C9A7;
+            font-weight: 500;
+        }
+    
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+    
+        input:focus, textarea:focus {
+            border-color: #00C9A7;
+            outline: none;
+        }
+    
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+    
+        .social-card {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+    
+        .social-card i {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+        }
+    
+        .social-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .linkedin { background: #0A66C2; }
+        .github { background: #333; }
+        .whatsapp { background: #25D366; }
+        .email { background: #EA4335; }
+    
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
